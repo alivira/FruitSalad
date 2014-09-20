@@ -7,8 +7,8 @@
     <link href="img/favicon.ico" rel="icon" type="image/x-icon" />
 
     <script src="js/solver.js"></script>
-	  <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-		<script src="js/modernizr.custom.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/modernizr.custom.js"></script>
 		
 		<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -21,6 +21,13 @@
 		<!-- fonts -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Share" />
+		<script type='text/javascript'>
+			 $(document).ready(function () {
+			 if ($("[rel=tooltip]").length) {
+			 $("[rel=tooltip]").tooltip();
+			 }
+		   });
+		</script>
   </head>
 
   <body>
@@ -35,12 +42,12 @@
 		<div id="slide2">
 			<div class="main">
 
-        <p align='center' style='font-size: 30pt; color:#41ab6b; font-weight: 300; padding-bottom: 30px; padding-top: 50px;'>What would you like to help solve?</p>
+        <p align='center' style='font-size: 30pt; color:#41ab6b; font-weight: 300; padding-bottom: 20px; padding-top: 50px;'>What would you like to help solve?</p>
         <section id="set-1">
           <div class="hi-icon-wrap hi-icon-effect-6">
 			  <table align='center' style="width:85%; table-layout: fixed;">
 				  <tr>
-					<td><a href="#set-1" class="hi-icon hi-icon-alien">Find Aliens</a></td>
+					<td><a href="#set-1" class="hi-icon hi-icon-alien" data-toggle="tooltip" data-placement="left" title="Test tooltip on left">Find Aliens</a></td>
 					<td><a href="#set-1" class="hi-icon hi-icon-cancer">Cure Cancer</a></td>
 					<td><a href="#set-1" class="hi-icon hi-icon-bitcoin">Mine Bitcoins</a></td>
 					<td><a href="#set-1" class="hi-icon hi-icon-global">Stop Global Warming</a></td>
