@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'ecoicon';
-	src:url('../icons/ecoicon.eot');
-	src:url('../fonts/ecoicons/ecoicon.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/ecoicons/ecoicon.woff') format('woff'),
-		url('../fonts/ecoicons/ecoicon.ttf') format('truetype'),
-		url('../fonts/ecoicons/ecoicon.svg#ecoicon') format('svg');
+	src:url('../icons/bananas.eot');
+	src:url('../icons/bananas.eot?#iefix') format('embedded-opentype'),
+		url('../icons/bananas.woff') format('woff'),
+		url('../icons/bananas.ttf') format('truetype'),
+		url('../icons/bananas.svg#ecoicon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
