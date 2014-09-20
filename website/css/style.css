@@ -26,11 +26,11 @@ h1 {
 	margin: 0;
 	padding: 0;
 }
-
+    
 h2 {
    font-family:'Open Sans';
-   font-weight: normal;
-   font-size: 40px;
+   font-weight: 300;
+   font-size: 30pt;
    text-align: center;
    color: #fff;
    margin: 0;
