@@ -33,7 +33,7 @@ httpGet('../start.php');
 window.onbeforeunload = function(){ httpGet('../end.php');}
 
 function Runner(){
-    var data;
+    var data, jobid;
     var sleepTime = 0;
 }
 
@@ -57,17 +57,19 @@ Runner.prototype.execute = function(){
     var that = this;
     var runUnit = function(){
         this.data = this.getData();
+        
+        console.log(this.data);
+        
         var before = new Date(); before = before.getTime();
         var result = this.computeFunction(this.data);
         this.reportResult(result);
         var after = new Date(); after = after.getTime();
-        var timeDiff = after - before;
-        that.sleepTime = 1000 * timeDiff;
+        that.sleepTime = after - before;
     }
+    
+    runUnit();
+    setInterval(runUnit, this.sleepTime);
 
-    while(1){
-        setTimeout(runUnit, this.sleepTime);
-    }
 }
 
 //Create pointers to text fields to update
