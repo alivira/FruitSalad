@@ -27,7 +27,8 @@ Add the following to the bottom of your /etc/apache2/apache2.conf file:
 
 
 ####Basket - MySQL Server
-Run the basket.sql SQL setup script located misc
+Make a database called basket
+Import the basket.sql SQL setup script located in misc into the basket database
 
 ####Cron Job
 Run crontab crontab.txt in the root folder. Note that if "check_status.php" is not located in /var/www/ then the absolute path in the "crontab.txt" file will need to be updated. The user that runs the cron job will also need to have permissions to run "iptables". Permission can be added by adding "YOUR_USERNAME ALL=NOPASSWD: /sbin/iptables" (without the quotes) to the sudoer file (open with "sudo visudo").
