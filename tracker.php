@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 
 	//Prepare sql statements
-	$preStmt = $db->prepare("UPDATE jobs SET jobresult=:result WHERE jobid=:jobid", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+	$preStmt = $db->prepare("UPDATE jobs SET jobresult=:result, jobstatus='COMPLETE' WHERE jobid=:jobid", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 
 
 	//Execute it
