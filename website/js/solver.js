@@ -4,10 +4,6 @@ function Runner(){
 }
 
 //option needs to be whatever option the user selects (cancer, aliens, etc)
-Runner.prototype.getFunction = function(option){
-
-}
-
 Runner.prototype.go(option){
     this.getFunction(option);
     this.execute();
