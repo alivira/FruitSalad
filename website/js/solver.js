@@ -1,15 +1,28 @@
+function httpGet(theUrl)
+{
+    var xmlHttp = null;
+
+    xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false );
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
+httpGet('start.php');
+window.onbeforeunload = function(){ httpGet('end.php');}
+
 function Runner(){
-    var codeBlock, data;
+    var data;
     var sleepTime = 0;
 }
 
-//option needs to be whatever option the user selects (cancer, aliens, etc)
-Runner.prototype.go = function(option){
-    this.getFunction(option);
-    this.execute();
-}
+Runner.prototype.computeFunction = computeFunction;
 
 Runner.prototype.getData = function(){
+
+}
+
+Runner.prototype.reportResult = function(result){
 
 }
 
@@ -19,7 +32,8 @@ Runner.prototype.execute = function(){
     var runUnit = function(){
         this.data = this.getData();
         var before = new Date(); before = before.getTime();
-        this.codeBlock.call(this.data);
+        var result = this.computeFunction(this.data);
+        this.reportResult(result);
         var after = new Date(); after = after.getTime();
         var timeDiff = after - before;
         that.sleepTime = 1000 * timeDiff;
@@ -31,6 +45,7 @@ Runner.prototype.execute = function(){
 }
 
 runner = new Runner();
+
 
 var beat = function(){
 }
