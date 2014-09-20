@@ -4,11 +4,7 @@ function Runner(){
 }
 
 //option needs to be whatever option the user selects (cancer, aliens, etc)
-Runner.prototype.getFunction = function(option){
-
-}
-
-Runner.prototype.go(option){
+Runner.prototype.go = function(option){
     this.getFunction(option);
     this.execute();
 }
@@ -35,4 +31,7 @@ Runner.prototype.execute = function(){
 }
 
 runner = new Runner();
-var heartbeat = new Worker("heartbeatWorker.js");
+
+var beat = function(){
+}
+setInterval(beat, 5);

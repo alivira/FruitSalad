@@ -32,10 +32,9 @@ h2 {
    font-family:'Open Sans';
    font-weight: 300;
    font-size: 30pt;
-   text-align: center;
    color: #41ab6b;
    margin: 0;
-	padding: 0;
+   padding: 10px 0 5px 0 ;
 }
 
 h3 {
@@ -49,7 +48,11 @@ h3 {
 	position: relative;
 }
 
-p {color: #515151}
+p {
+	color: #939393;
+	font-size:23px;
+	padding-bottom:5px;
+}
 ul {color: #858484;}
 
 
@@ -75,20 +78,28 @@ ul {color: #858484;}
 	
 	background-color: #41ab6b;
 	color: #333333;
-	height: 60%;
+	height: auto;
 	margin: 0 auto;
 	overflow: hidden;
-	padding: 50px 0;	
+	padding: 50px 0 50px;	
 	
 }
-
 #slide2{
 	background-color: #fff;
 	color: #333333;
 	height: auto;
 	margin: 0 auto;
 	overflow: hidden;
-	padding: 0 0;
+	padding: 40px 0 30px;
+}
+
+#slide5{
+	background-color: #fff;
+	color: #333333;
+	height: auto;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 30px 0 30px;
 }
 
 #slide3{
@@ -106,7 +117,7 @@ ul {color: #858484;}
 	height: auto;
 	margin: 0 auto;
 	overflow: hidden;
-	padding: 0 0;
+	padding: 40px 0;
 }
 
 
