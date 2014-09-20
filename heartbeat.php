@@ -7,9 +7,9 @@ $preStmt->execute(array("ip" => $_SERVER["REMOTE_ADDR"]));
 $row = $preStmt->fetch(PDO::FETCH_ASSOC);
 echo print_r($row);
 if ($row) {
-	$db->prepare("UPDATE clients SET lastheartbeat=NOW() WHERE clientip=:id")->execute(array("id" => $row['clientid']));
+	$db->prepare("UPDATE clients SET lastheartbeat=NOW() AND active=TRUE WHERE clientip=:id")->execute(array("id" => $row['clientid']));
 } else {
-	$db->prepare("INSERT INTO clients (lastheartbeat, clientip) VALUES (NOW(), :clientip)")->execute(array("clientip" => $_SERVER['REMOTE_ADDR']));
+	$db->prepare("INSERT INTO clients (lastheartbeat, clientip, active) VALUES (NOW(), :clientip, TRUE)")->execute(array("clientip" => $_SERVER['REMOTE_ADDR']));
 }
 
 
