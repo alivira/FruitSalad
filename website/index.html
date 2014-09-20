@@ -21,12 +21,30 @@
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Share" />
 		
+		<style type="text/css">
+			.inner {
+			  position: absolute;
+			}
+		</style>
+		
 		<script type='text/javascript'>
-			 $(document).ready(function () {
-			 if ($("[rel=tooltip]").length) {
-			 $("[rel=tooltip]").tooltip();
-			 }
-		   });
+			$(document).ready(function(){
+				var aliens ="Search for Extra-Terrestrial Intelligence, or SETI@home, is an internet-nnased public volunteering computing project employing the BIONC software platform. Hosted by the Space Sciences Laboratory, at the University of California, Berkely, its purpose is to analyze radio signals, search for signs of extra terrestrial intelligence.";
+				var cancer ="IBM's World Community Grid will enable the most computationally  extensive componenets of tissue microarray software to run at optimal speed. By harnessing the collective computational power of the World Community Grid, researchers can analyze a larger set of cancer tissue specimens";
+			
+			  $("#alienbtn").click(function(){
+			    $("#container").fadeOut(function(){
+					$(this).text(aliens).fadeIn();
+				});
+			 });
+			 
+			 $("#cancerbtn").click(function(){
+			    $("#container").fadeOut(function(){
+					$(this).text(aliens).fadeIn();
+				});
+			 });
+
+});
 		</script>
   </head>
 
@@ -51,7 +69,7 @@
 				<p>Simple! Just select your charity of choice below and click <em>connect</em>. Make sure not to close this tab since it will be used to help solve the algorithms. Happy browsing!</p>
 			</div>
 		</div>
-					<hr width="66%">
+<hr width="66%">
     <!-- SLIDE 2-->
 		<div id="slide5">
 			<div class="main">
@@ -62,62 +80,53 @@
 						<div class="row">
 							<div class="col-md-3">
 							<table>
-								<tr><a href="solver.html?do=aliens" class="hi-icon hi-icon-alien">Find Aliens</a></tr>
+								<tr><a href="<!--solver.html?do=aliens-->" class="hi-icon hi-icon-alien" id="alienbtn">Find Aliens</a></tr>
 								<tr><h2>Find Aliens</h2></tr>
 							</table>
 							</div>
 
 							<div class="col-md-3">
 							<table>
-								<tr><a href="solver.html?do=cancer" class="hi-icon hi-icon-cancer">Cure Cancer</a></tr>
+								<tr><a href="<!--solver.html?do=cancer-->" class="hi-icon hi-icon-cancer" id="cancerbtn">Cure Cancer</a></tr>
 								<tr><h2>Cure Cancer</h2></tr>
 							</table>
 							</div>
 							
 							<div class="col-md-3">
 							<table>
-								<tr><a href="solver.html?do=btc" class="hi-icon hi-icon-bitcoin">Mine Bitcoin</a></tr>
+								<tr><a href="<!--solver.html?do=btc-->" class="hi-icon hi-icon-bitcoin" id="bitcoinbtn">Mine Bitcoin</a></tr>
 								<tr><h2>Mine Bitcoin</h2></tr>
 							</table>
 							</div>
 							
 							<div class="col-md-3">
 							<table>
-								<tr><a href="solver.html?do=globalwarming" class="hi-icon hi-icon-global">Save Rainforests</a></tr>
+								<tr><a href="<!--solver.html?do=globalwarming-->" class="hi-icon hi-icon-global" id="globalbtn">Save Rainforests</a></tr>
 								<tr><h2>Save Rainforests</h2></tr>
 							</table>
 							</div>                       
 						</div>
 					</div>
-					
-					<div id="aliens">
-						<p>Search for Extra-Terrestrial Intelligence, or SETI@home, is an
-						internet-nnased public volunteering computing project employing the
-						BIONC software platform. Hosted by the Space Sciences Laboratory, at
-						the University of California, Berkely, its purpose is to analyze radio
-						signals, search for signs of extra terrestrial intelligence.</p>
+					<div id="container" style="display:none; padding-left:15%; padding-right:15%">
+						<p align='justify'></p>
 					</div>
 					
-					<div id="cancer">
-						<p>IBM's World Community Grid will enable the most computationally 
-						extensive componenets of tissue microarray software to run at optimal speed.
-						By harnessing the collective computational power of the World Community Grid,
-						researchers can analyze a larger set of cancer tissue specimens</p>
+					<div id="cancer" style="display:none; padding-left:15%; padding-right:15%">
+						<p align='justify'></p>
 					</div>
 					
-					<div id="bitcoin">
-						<p>Bitcoin is a software-based online payment system. Payments are recorded
+					<div id="bitcoin" style="display:none; padding-left:15%; padding-right:15%">
+						<p align='justify'>Bitcoin is a software-based online payment system. Payments are recorded
 						in a public ledger using its own unit of account called bitcoin. Payments work
 						peer-to-peer without a central repository or administrator. Bitcoins are created
 						as a reward for processing work.</p>
 					</div>
 					
-					<div>
-						<p>World Community Grid and the Clean Energy Project are assembling a virtual
+					<div id="global" style="display:none; padding-left:15%; padding-right:15%">
+						<p align='justify'>World Community Grid and the Clean Energy Project are assembling a virtual
 						laboratory to build thousands of organic compounds in order to discover the best
 						candidates for future solar cell research.</p>
 					</div>
-					
 					
 					
 				</section>
