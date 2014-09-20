@@ -90,5 +90,6 @@ runner = new Runner();
 
 // Start our heartbeat
 var beat = function(){
+    httpGet("../heartbeat.php");
 }
 setInterval(beat, 5000);
