@@ -38,7 +38,7 @@ function Runner(){
 }
 
 //Runner class that handles computations
-Runner.prototype.computeFunction = computeFunction;
+//Runner.prototype.computeFunction = computeFunction;
 
 Runner.prototype.getData = function(){
     return httpGet("tracker.php");
@@ -66,7 +66,7 @@ Runner.prototype.execute = function(){
     }
 
     while(1){
-        setTimeout(runUnit, sleepTime);
+        setTimeout(runUnit, this.sleepTime);
     }
 }
 
@@ -78,7 +78,6 @@ var time = function(){
     var newTime = new Date(); newTime = newTime.getTime();
     tDiff = (newTime - currentTime)/1000;
     timeSpent.innerHTML = parseInt(tDiff);
-
 }
 setInterval(time, 30);
 
@@ -90,4 +89,4 @@ runner = new Runner();
 // Start our heartbeat
 var beat = function(){
 }
-setInterval(beat, 5);
+setInterval(beat, 5000);
