@@ -29,8 +29,8 @@ function httpPost(path, params) {
 
 
 //Define a start and stop
-httpGet('start.php');
-window.onbeforeunload = function(){ httpGet('end.php');}
+httpGet('../start.php');
+window.onbeforeunload = function(){ httpGet('../end.php');}
 
 function Runner(){
     var data;
@@ -41,7 +41,7 @@ function Runner(){
 //Runner.prototype.computeFunction = computeFunction;
 
 Runner.prototype.getData = function(){
-    return httpGet("tracker.php");
+    return httpGet("../tracker.php");
 }
 
 Runner.prototype.reportResult = function(result){
