@@ -4,6 +4,8 @@
 ##Introduction
 
 ##Setup
+Run "git checkout https://github.com/alivira/FruitSalad.git" (without quotes) somewhere, then recursively copy the files to /var/www. Dont forget to copy hidden files.
+
 ###Backend
 ####Set up internet forwarding
 Run these commands to set up internet forwarding:
