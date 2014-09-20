@@ -125,6 +125,7 @@
 .hi-icon-effect-6 .hi-icon:hover {
 	background: rgba(255,255,255,1);
 	color: #64bb5d;
+	text-decoration:none;
 }
 
 .hi-icon-effect-6 .hi-icon:hover:before {
@@ -132,8 +133,3 @@
 	-moz-animation: spinAround 2s linear infinite;
 	animation: spinAround 2s linear infinite;
 }
-
-
-
-
-
