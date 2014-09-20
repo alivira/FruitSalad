@@ -16,6 +16,14 @@ Run these commands to set up internet forwarding:
 ####Setup a LAMP stack 
 *apt-get command goess here!*
 
+Add the following to the bottom of your /etc/apache2/apache2.conf file:
+    <VirtualHost _default_:*>
+        DocumentRoot /var/www
+    </VirtualHost>
+
+    Include /etc/phpmyadmin/apache.conf
+
+
 ####Basket - MySQL Server
 Run the basket.sql SQL setup script located misc
 
