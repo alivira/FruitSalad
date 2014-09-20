@@ -1,5 +1,5 @@
 <?php
-$db = new PDO("mysql:host=localhost;dbname=basket;charset=utf8", "root", "");
+$db = new PDO("mysql:host=localhost;dbname=basket;charset=utf8", "root", "What is systems?");
 
 $preStmt = $db->prepare("SELECT * FROM clients WHERE clientip=:ip LIMIT 1");
 
