@@ -116,15 +116,15 @@
 
 /* Effect 6 */
 .hi-icon-effect-6 .hi-icon {
-	box-shadow: 0 0 0 4px rgba(255,255,255,1);
+	box-shadow: 0 0 0 4px rgba(65,171,107,1);
 	-webkit-transition: background 0.2s, color 0.2s;
 	-moz-transition: background 0.2s, color 0.2s;
 	transition: background 0.2s, color 0.2s;
 }
 
 .hi-icon-effect-6 .hi-icon:hover {
-	background: rgba(255,255,255,1);
-	color: #64bb5d;
+	background: rgba(65,171,107,1);
+	color: #fff;
 	text-decoration:none;
 }
 
