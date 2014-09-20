@@ -6,8 +6,29 @@ function httpGet(theUrl)
     xmlHttp.open( "GET", theUrl, false );
     xmlHttp.send( null );
     return xmlHttp.responseText;
+}	
+
+function httpPost(path, params) {
+    var form = document.createElement("form");
+    form.setAttribute("method", "post");
+    form.setAttribute("action", path);
+
+    for(var key in params) {
+        if(params.hasOwnProperty(key)) {
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", params[key]);
+
+            form.appendChild(hiddenField);
+         }
+    }
+    document.body.appendChild(form);
+    form.submit();
 }
 
+
+//Define a start and stop
 httpGet('start.php');
 window.onbeforeunload = function(){ httpGet('end.php');}
 
@@ -16,14 +37,19 @@ function Runner(){
     var sleepTime = 0;
 }
 
+//Runner class that handles computations
 Runner.prototype.computeFunction = computeFunction;
 
 Runner.prototype.getData = function(){
-
+    return httpGet("tracker.php");
 }
 
 Runner.prototype.reportResult = function(result){
-
+    result = {
+        "value": result,
+        "jobid": this.jobid
+    };
+    httpPost("tracker.php", result);
 }
 
 Runner.prototype.execute = function(){
@@ -44,9 +70,10 @@ Runner.prototype.execute = function(){
     }
 }
 
+// start runner
 runner = new Runner();
 
-
+// Start our heartbeat
 var beat = function(){
 }
 setInterval(beat, 5);
