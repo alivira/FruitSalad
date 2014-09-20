@@ -70,6 +70,20 @@ Runner.prototype.execute = function(){
     }
 }
 
+//Create pointers to text fields to update
+score = document.getElementById("score");
+currentTime = new Date(); currentTime = currentTime.getTime();
+var time = function(){
+    timeSpent = document.getElementById("time");
+    var newTime = new Date(); newTime = newTime.getTime();
+    tDiff = (newTime - currentTime)/1000;
+    timeSpent.innerHTML = parseInt(tDiff);
+
+}
+setInterval(time, 30);
+
+
+
 // start runner
 runner = new Runner();
 
