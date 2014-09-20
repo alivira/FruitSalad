@@ -1,201 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<meta charset="utf-8">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Powered by Fruit Salad">
-	<link href="img/favicon.ico" rel="icon" type="image/x-icon" />
-
     <title>Bananas Portal</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
-       
-	    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <meta name="description" content="Powered by Fruit Salad">
+    
+    <link href="img/favicon.ico" rel="icon" type="image/x-icon" />
 
+    <script src="js/solver.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/modernizr.custom.js"></script>
+		
 		<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 
-		
 		<!--Original stylesheet-->
 		<link rel="stylesheet" href="css/style.css"/>
-		
-		
-		
-		
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+
 		<!-- fonts -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Share" />
-		
-		
-		
-
-		
-
-		
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-	   
-	   
+		<script type='text/javascript'>
+			 $(document).ready(function () {
+			 if ($("[rel=tooltip]").length) {
+			 $("[rel=tooltip]").tooltip();
+			 }
+		   });
+		</script>
   </head>
 
   <body>
-  
-
-  
-			<!----- SLIDES START --->   	
-			<!-- SLIDE 1 -->
-			<div id="slide1">
-				<div class="main" align="middle">
-
-					<h1 style="font-weight: 300;">&nbsp;Ali Vira</h1>
-
-					<br><br><br>
-					<div class="col-md-1 col-md-offset-4"><a href="http://facebook.com/alivira" target="_blank"><img height="74px" src="img/icons/facebook.png" ></a></div>
-					<div class="col-md-1"><a href="https://twitter.com/Ali_Vira" target="_blank"><img height="75px" src="img/icons/twitter.png" ></a></div>
-					<div class="col-md-1"><a href="http://www.linkedin.com/in/alivira" target="_blank"><img height="75px" src="img/icons/linkedin.png"></a></div>
-					<div class="col-md-1"><a href="mailto:ali.vira93@gmail.com" target="_blank"><img height="75px" src="img/icons/email.png"></a></div>
-					</div>
-				</div> 
-			</div> 
-  
-    
-
-			<!-- SLIDE 2-->
-			<div id="slide2">
-			<div class="main">
-				
-			<p align='center' style='font-size: 18pt; color:#47a3da; font-weight: 300; padding-bottom: 30px;'>Check out my <a target="_blank" href="http://www.linkedin.com/in/alivira" style="color: #A4A4A4;">LinkedIn</a> for additional work experience</p>
-				
-			</div>
-			</div>
-		
-		
-	  
-	  
-	       
-
-		<!-- SLIDE 4 -->
-		<div id="slide4">
+    <!-- SLIDE 1 -->
+		<div id="slide1">
 			<div class="main" align="middle">
-				 <h2 style="font-weight: 300; padding-top:100px;">Let's chat!</h1>
-				 <br><br>
-				 <div class="col-md-2 col-md-offset-3"><a href="http://facebook.com/alivira" target="_blank"><img height="74px" src="img/icons/facebook.png" ></a></div>
-				 <div class="col-md-2"><a href="skype:ali.vira?add"><img height="75px" src="img/icons/skype.gif"></a></div>
-				 <div class="col-md-2"><a href="mailto:ali.vira93@gmail.com" target="_blank"><img height="75px" src="img/icons/email.png"></a></div>
-			<div style="margin-bottom: 150px;"></div>
+				<h1 style="font-weight: 300;">Bananas Wifi</h1>
+				<h2 style="color: #fff;">Powered by <em>Fruit Salad</em></h2>
 			</div> 
 		</div> 
 		
-		<!-- INLINE CONTENT -->
-		
-		
-		<!-- Work History -->
-		<div style='display:none'>
-			<div id='nexjra' style='padding:10px; background:#fff;'>
-			<p style='font-size: 18pt'><a href="http://www.nexj.com/">NexJ Systems</a>: Product Developer</p>
-			<ul style="color: #A4A4A4">
-				<li>Planned and pitched an electronic prescribing feature from the ground up including back-end design, front-end design, and business models</li>
-				<li>Designed and developed out of the box analytic reports for the health software</li>
-				<li>Conducted business analysis on competitors and generated blue sheets and strategic plans</li>
-				<li>Scripted a tool with Javascript to automatically update slide database</li>
-			</ul>
-			<p>I used research and analytics to develop features and strategically position NexJ Systems against competitors.</p>
+	<!--SLIDE 2: What is this? -->
+		<div id="slide2">
+			<div class="main" align="left" style="padding-left:10%; padding-right:10%;">
+				<h2>What is this?</h2>
+				<p>This is Bananas' new wifi portal! All you need to do to connect to our free wifi is donate a portion of your computing power to the charity of your choice.</p> 
+				<h2>How does it work?</h2>
+				<p>Using <em>distributed computing</em>, you join a grid of over one million users to help solve computational algorithms. Each user solves a small piece of
+				a larger puzzle, be it searching for alien life, curing cancer, or decoding the human genome!</p>
+				<h2>How do I get started?</h2>
+				<p>Simple! Just select your charity of choice below and click <em>connect</em>. Make sure not to close this tab since it will be used to help solve the algorithms</p>
 			</div>
 		</div>
-		
-		
-		<div style='display:none'>
-			<div id='nexjpm' style='padding:10px; background:#fff;'>
-			<p style='font-size: 18pt'><a href="http://www.nexj.com/">NexJ Systems</a>: Program Manager</p>
-			<ul>
-				<li>Conducted a process efficiency audit to identify and resolve process bottlenecks, displayed findings through the use of a company wide process map (BPMN) and a technical report</li>
-				<li>Coordinated hot fixes and service packs by planning release meetings, following up with department heads, and updating release documentation</li>
-				<li>Met with department executives to collect and rank changes to existing processes and tooling to help speed feature releases</li>
-				<li>Created and implemented enhanced data collection tools using SQL to speed up bug verification and quality assurance reporting</li>
-				<li>Prepared weekly executive status update slide deck</li>
-			</ul>
-			<p>It was my job to increase process efficiency, coordinate hot fixes and service packs, and speed future releases.</p>
-			</div>
-		</div>
+					<hr width="66%">
+    <!-- SLIDE 2-->
+		<div id="slide5">
+			<div class="main">
+
+        <p align='center' style="font-size: 30pt; color:#41ab6b; font-weight: 300;">What would you like to help solve?</p>
+        <section id="set-1">
+          <div class="hi-icon-wrap hi-icon-effect-6">
+			  <table align='center' style="width:85%; table-layout: fixed;">
+				  <tr>
+					<td><a href="#set-1" class="hi-icon hi-icon-alien" data-toggle="tooltip" data-placement="left" title="Test tooltip on left">Find Aliens</a></td>
+					<td><a href="#set-1" class="hi-icon hi-icon-cancer">Cure Cancer</a></td>
+					<td><a href="#set-1" class="hi-icon hi-icon-bitcoin">Mine Bitcoins</a></td>
+					<td><a href="#set-1" class="hi-icon hi-icon-global">Stop Global Warming</a></td>
+				  </tr>
+				  <tr>
+					<td><h2>Find Aliens</h2></td>
+					<td><h2>Cure Cancer</h2></td>
+					<td><h2>Mine Bitcoins</h2></td>
+					<td><h2>Save Rainforests</h2></td>
+				  </tr>
+			  </table>
+		  </div>
+        </section>
 			
-		<div style='display:none'>
-			<div id='glhf' style='padding:10px; background:#fff;'>
-			<p style='font-size: 18pt'><a href="http://issuu.com/glhfmag">GLHF Magazine</a>: Founder and Executive Publisher</p>
-			<ul>
-				<li>Managed an international team of fifteen writers and editors to create the largest eSports magazine in the world with over 250 000 reads </li>
-				<li>Communicated with international staff to coordinate production, organize workflow, and resolve conflicts</li>
-				<li>Optimized pitch submission process by building integrations with third-party tools and training staff</li>
-			</ul>
-			<p>I founded and, with the help of an international team, helped run the world's largest eSports magazine. My primary role was directing content
-			production and managing the release process.</p>
-			</div>
-		</div>
-	
-		<div style='display:none'>
-			<div id='watsat' style='padding:10px; background:#fff;'>
-			<p style='font-size: 18pt'><a href="http://www.watsat.ca/">WatSat</a>: Business Lead</p>
-			<ul>
-				<li>Constructing a functional Microsatellite to map ice changes in the Arctic</li>
-				<li>Contacting sponsors, coordinating social media outreach, and recruitment</li>
-			</ul>
-			<p>I get sponsors, new team members, and control and promote our team brand.</p>
-			</div>
-		</div>
-		
-		<div style='display:none'>
-			<div id='orbis' style='padding:10px; background:#fff;'>
-			<p style='font-size: 18pt'><a href="http://www.orbisengineering.net/">Orbis Engineering</a>: Field Services Technician</p>
-			<ul>
-				<li>Implemented site-wide electrical safety warnings to ensure the well-being of all workers at the EKATI Diamond Mine in the Northwest Territories</li>
-				<li>Identified and resolved process efficiency problems by creating a data analysis utility in C++</li>
-				<li>Updated plant schematics and highlighted potential electrical hazards by conducting an Arc Flash study</li>
-			</ul>
-			<p>I spent four months on a field rotation between Alberta and the Arctic, analysing plant schematics and implementing critical electrical safety measures.</p>
-			</div>
-		</div>
-		
-		<div style='display:none'>
-			<div id='acrep' style='padding:10px; background:#fff;'>
-			<p style='font-size: 18pt'><a href="https://uwaterloo.ca/systems-design-engineering/">Systems Design Engineering</a>: Academic Representative</p>
-			<ul>
-				<li>Elected to act as a liaison between faculty and students</li>
-				<li>Improving school experience by resolving conflicts, organizing class activities, and managing online resources</li>
-				<li>Organized a successful student movement to oppose adverse scheduling changes</li>
-			</ul>
-			<p>With the help of <a href="http://jennywen.ca/">my partner</a>, I act as a liaison between the faculty and the students and keep our class healthy and happy.</p>
-			</div>
-		</div>
-		
-		<div style='display:none'>
-			<div id='impact' style='padding:10px; background:#fff;'>
-			<p style='font-size: 18pt'><a href="http://en.wikipedia.org/wiki/Impact_Entrepreneurship_Group">Impact Entrepreneurship Group</a>: Designer and Developer</p>
-			<ul>
-				<li>Developed the Impact website, using self-taught HTML and CSS</li>
-				<li>Providing troubleshooting and technical support across the organization</li>
-				<li>Engaged individual teams to identify and incorporate their needs into the website</li>
-			</ul>
-			<p>Securing this internship after a summer at Shad Valley, I helped design the website and provide technical support for all staff.</p>
-			</div>
-		</div>
-		
-		<!-- Portfolio Content -->
-		
-		<div style='display:none'>
-			<div id='a1' style='padding:10px; background:#fff;'>
-				
-			</div>
-		</div>
-		
-	
-<!----- SLIDES END --->
+        <!-- /container -->
+        <script>
+          var hash = window.location.hash,
+            current = 0,
+            demos = Array.prototype.slice.call( document.querySelectorAll( '#codrops-demos > a' ) );
+          
+          if( hash === '' ) hash = '#set-1';
+           setDemo( demos[ parseInt( hash.match(/#set-(\d+)/)[1] ) - 1 ] );
 
+          demos.forEach( function( el, i ) {
+            el.addEventListener( 'click', function() { setDemo( this ); } );
+          } );
 
-     
-
-
+          function setDemo( el ) {
+            var idx = demos.indexOf( el );
+            if( current !== idx ) {
+              var currentDemo = demos[ current ];
+              currentDemo.className = currentDemo.className.replace(new RegExp("(^|\\s+)" + 'current-demo' + "(\\s+|$)"), ' ');
+            }
+            current = idx;
+            el.className = 'current-demo'; 
+          }
+        </script>
+			</div>
+		</div>
+	  
+		<!-- SLIDE 4 -->
+		<div id="slide4">
+			<div class="main" align="middle">
+				 <h2 style="font-weight: 300; padding-top:50px; color: #fff;">Start solving!</h2>
+			<div style="margin-bottom: 150px;"></div>
+			</div> 
+		</div> 
   </body>
 </html>

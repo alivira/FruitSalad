@@ -8,8 +8,9 @@ if(isset($_SESSION['timestamp'])) {
     echo "You've been here before";
     
 } else {
-    header("Location: " . $landing_page__url);
+    header("Location: " . $landing_page_url);
     echo "You're new around here";
+    $_SESSION['timestamp'] = "asdf";
 }
 // store session data
 //$_SESSION['views']=1;
