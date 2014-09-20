@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 20, 2014 at 09:20 PM
+-- Generation Time: Sep 20, 2014 at 10:14 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -42,11 +42,13 @@ CREATE TABLE IF NOT EXISTS `clients` (
 
 CREATE TABLE IF NOT EXISTS `jobs` (
   `jobid` int(11) NOT NULL AUTO_INCREMENT,
-  `lastsent` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `lastsent` timestamp NULL DEFAULT NULL,
   `jobstatus` text NOT NULL,
-  `slotdata` text NOT NULL,
+  `jobdata` text NOT NULL,
+  `jobresult` text,
   PRIMARY KEY (`jobid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
