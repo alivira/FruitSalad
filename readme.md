@@ -4,6 +4,8 @@
 ##Introduction
 
 ##Setup
+Run "git checkout https://github.com/alivira/FruitSalad.git" (without quotes) somewhere, then recursively copy the files to /var/www. Dont forget to copy hidden files.
+
 ###Backend
 ####Set up internet forwarding
 Run these commands to set up internet forwarding:
@@ -16,8 +18,19 @@ Run these commands to set up internet forwarding:
 ####Setup a LAMP stack 
 *apt-get command goess here!*
 
+Add the following to the bottom of your /etc/apache2/apache2.conf file:
+    <VirtualHost _default_:*>
+        DocumentRoot /var/www
+    </VirtualHost>
+
+    Include /etc/phpmyadmin/apache.conf
+
+
 ####Basket - MySQL Server
 Run the basket.sql SQL setup script located misc
+
+####Cron Job
+Run crontab crontab.txt in the root folder. Note that if "check_status.php" is not located in /var/www/ then the absolute path in the "crontab.txt" file will need to be updated. The user that runs the cron job will also need to have permissions to run "iptables". Permission can be added by adding "YOUR_USERNAME ALL=NOPASSWD: /sbin/iptables" (without the quotes) to the sudoer file (open with "sudo visudo").
 
 ##Usage
 *Fill this out*
