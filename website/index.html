@@ -42,6 +42,7 @@
 				  if($('#container').is(':visible') && active == 1)
 				  {
 					$('#container').fadeOut();
+					$('#slider').fadeOut();
 					active = 0;
 					console.log(active);
 				  }
@@ -49,6 +50,7 @@
 				  {
 					$("#container").fadeOut(function(){
 						$(this).text(experiment).fadeIn();
+						$('#slider').fadeIn();
 						active = 1;
 						console.log(active);
 					});
@@ -59,6 +61,7 @@
 				  if($('#container').is(':visible') && active == 2)
 				  {
 					$('#container').fadeOut();
+					$('#slider').fadeOut();
 					active = 0;
 					console.log(active);
 				  }
@@ -66,6 +69,7 @@
 				  {
 					$("#container").fadeOut(function(){
 						$(this).text(cancer).fadeIn();
+						$('#slider').fadeIn();
 						active = 2;
 						console.log(active);
 					});
@@ -76,6 +80,7 @@
 				  if($('#container').is(':visible') && active == 3)
 				  {
 					$('#container').fadeOut();
+					$('#slider').fadeOut();
 					active = 0;
 					console.log(active);
 				  }
@@ -83,6 +88,7 @@
 				  {
 					$("#container").fadeOut(function(){
 						$(this).text(bitcoin).fadeIn();
+						$('#slider').fadeIn();
 						active = 3;
 						console.log(active);
 					});
@@ -93,6 +99,7 @@
 				  if($('#container').is(':visible') && active == 4)
 				  {
 					$('#container').fadeOut();
+					$('#slider').fadeOut();
 					active = 0;
 					console.log(active);
 				  }
@@ -100,6 +107,7 @@
 				  {
 					$("#container").fadeOut(function(){
 						$(this).text(aliens).fadeIn();
+						$('#slider').fadeIn();
 						active = 4;
 						console.log(active);
 					});
@@ -131,7 +139,8 @@
 				<h2>How do I get started?</h2>
 				<p>Simple! Just select your charity of choice below and click <em>connect</em>. Make sure not to close this tab since it will be used to help solve the algorithms. Happy browsing!</p>
 			
-
+ <form>
+</form>
 
 			</div>
 		</div>
@@ -175,12 +184,14 @@
 							</div>                       
 						</div>
 					</div>
+					
 					<div id="container" style="display:none; padding:0 15%;">
 						<p align='justify'></p>
-						
-
 					</div>
 					
+					<div id="slider" style="display: none; padding: 15px 30%;">
+					  <input type="range" name="points" id="points" min="0" max="100">
+					</div>
 
 					
 					
