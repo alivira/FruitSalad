@@ -1,3 +1,20 @@
+computeFunction = function(data){
+    var factorArray = [];
+    var jobId = data.jobid;
+    var jobdata = data.jobdata;
+    var jobdataArray = data.split(",");
+    var number = jobdataArray[0]
+    var min = jobdataArray[1]
+    var max = jobdataArray[2]
+
+    for (var i=min;i<=max;i++){
+        if (number % i == 0){
+            factorArray.push(i);
+        }
+    }
+    return factorArray;
+}
+
 function httpGet(theUrl)
 {
     var xmlHttp = null;
@@ -8,7 +25,16 @@ function httpGet(theUrl)
     return xmlHttp.responseText;
 }	
 
-function httpPost(path, params) {
+function httpPost(path, data) {
+    $.ajax({
+        type: "POST",
+        url: path,
+        data: JSON.stringify(data),
+       	contentType: "application/json",
+    	success: function() {console.log("Sent data!");}
+    });
+    return;
+
     var form = document.createElement("form");
     form.setAttribute("method", "post");
     form.setAttribute("action", path);
@@ -41,34 +67,52 @@ function Runner(){
 Runner.prototype.computeFunction = computeFunction;
 
 Runner.prototype.getData = function(){
-    return httpGet("../tracker.php");
+    try {
+        var rawData = httpGet("../tracker.php");
+	console.log(rawData);
+        this.data = JSON.parse(rawData);
+        this.jobid = this.data.jobid;
+	return true;
+    } catch (err) {
+	//Most likely a JSON.parse error (eg. Empty string)
+	console.error("ERROR!");
+	console.error(err);
+	return false;
+    }
+
 }
 
 Runner.prototype.reportResult = function(result){
     result = {
         "value": result,
-        "jobid": this.jobid
     };
-    httpPost("tracker.php", result);
+    httpPost("../tracker.php?jobid=" + this.jobid, result);
 }
 
+
+Runner.prototype.computeFunction = function() {return "Some result";};
 Runner.prototype.execute = function(){
 
     var that = this;
+    this.stop = false;
     var runUnit = function(){
-        this.data = that.getData();
-        
-        console.log(that.data);
+        if (!that.getData()) {
+		console.error("Error'd!");
+		that.stop = true;;
+		return;
+	}
         
         var before = new Date(); before = before.getTime();
-        var result = this.computeFunction(this.data);
+        var result = that.computeFunction(that.data);
         that.reportResult(result);
         var after = new Date(); after = after.getTime();
-        that.sleepTime = after - before;
+        that.sleepTime = (after - before) * 500;
     }
-    
+
     runUnit();
-    setInterval(runUnit, this.sleepTime);
+    if (!this.stop) {
+	    setInterval(runUnit, this.sleepTime);
+    }
 
 }
 
@@ -88,6 +132,8 @@ setInterval(time, 30);
 // start runner
 runner = new Runner();
 runner.execute();
+
+
 
 // Start our heartbeat
 var beat = function(){

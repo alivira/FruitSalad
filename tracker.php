@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 	header("Content-type: application/json");
 	while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 		//Update job's lastsent
-		$db->prepare("UPDATE jobs SET lastsent=NOW() WHERE jobid=:jobid")->execute(array(":jobid" => $row['jobid']));
+		$db->prepare("UPDATE jobs SET lastsent=NOW(), jobstatus='INPROGRESS' WHERE jobid=:jobid")->execute(array(":jobid" => $row['jobid']));
 		echo json_encode($row);
 		echo "\n";
 	}
