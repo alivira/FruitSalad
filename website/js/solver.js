@@ -75,8 +75,8 @@ Runner.prototype.getData = function(){
 	return true;
     } catch (err) {
 	//Most likely a JSON.parse error (eg. Empty string)
-	console.error("ERROR!");
-	console.error(err);
+	//console.error("ERROR!");
+	//console.error(err);
 	return false;
     }
 
@@ -97,7 +97,7 @@ Runner.prototype.execute = function(){
     this.stop = false;
     var runUnit = function(){
         if (!that.getData()) {
-		console.error("Error'd!");
+		//console.error("Error'd!");
 		that.stop = true;;
 		return;
 	}
@@ -131,9 +131,6 @@ setInterval(time, 30);
 
 // start runner
 runner = new Runner();
-runner.execute();
-
-
 
 // Start our heartbeat
 var beat = function(){
