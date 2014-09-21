@@ -15,9 +15,11 @@ body{
 	width: 100%;
 	font-family: 'Open Sans';
 	font-weight:normal;
-	
+  -webkit-user-select: none;
+     -moz-user-select: -moz-none;
+      -ms-user-select: none;
+          user-select: none;
 }
-
 h1 { 
     font-family: 'Open Sans';
 	font-weight:normal;

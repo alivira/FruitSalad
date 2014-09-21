@@ -1,17 +1,29 @@
-<!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
-<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
-</head>
-<body>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['Genre', 'Your Contribution', { role: 'style' }, 'Total',  { role: 'style' } ],
+        ['Factors', 10, '#41ab6b', 60, 'silver']
+      ]);
 
+      var options = {
+        width: 600,
+        height: 200,
+        legend: {  position: "none"},
+        bar: { groupWidth: '50%' },
+        isStacked: true
+      };
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
 
-
-<input type="range" name="points" id="points" value="50" min="0" max="100" data-show-value="true">
-
-
-</body>
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 100px;"></div>
+  </body>
 </html>

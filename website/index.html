@@ -32,25 +32,27 @@
 		<script type='text/javascript'>
 		
 			$(document).ready(function(){
-				var aliens ="Search for Extra-Terrestrial Intelligence, or SETI@home, is an internet-nnased public volunteering computing project employing the BIONC software platform. Hosted by the Space Sciences Laboratory, at the University of California, Berkely, its purpose is to analyze radio signals, search for signs of extra terrestrial intelligence.";
-				var cancer ="IBM's World Community Grid will enable the most computationally  extensive componenets of tissue microarray software to run at optimal speed. By harnessing the collective computational power of the World Community Grid, researchers can analyze a larger set of cancer tissue specimens";
-				var bitcoin ="Bitcoin is a software-based online payment system. Payments are recorded in a public ledger using its own unit of account called bitcoin. Payments work peer-to-peer without a central repository or administrator. Bitcoins are created as a reward for processing work.";
-				var experiment = "A demo program that will attempt to factor large numbers.";
+				var aliens ="<p align='justify'>Search for Extra-Terrestrial Intelligence, or SETI@home, is an internet-nnased public volunteering computing project employing the BIONC software platform. Hosted by the Space Sciences Laboratory, at the University of California, Berkely, its purpose is to analyze radio signals, search for signs of extra terrestrial intelligence.</p>";
+				var cancer ="<p align='justify'>IBM's World Community Grid will enable the most computationally  extensive componenets of tissue microarray software to run at optimal speed. By harnessing the collective computational power of the World Community Grid, researchers can analyze a larger set of cancer tissue specimens</p>";
+				var bitcoin ="<p align='justify'>Bitcoin is a software-based online payment system. Payments are recorded in a public ledger using its own unit of account called bitcoin. Payments work peer-to-peer without a central repository or administrator. Bitcoins are created as a reward for processing work.</p>";
+				var experiment = "<p align='justify'>A demo program that will attempt to factor large numbers.</p>";
 				var active = 1;
 			
 			  $("#expbtn").click(function(){
 				  if($('#container').is(':visible') && active == 1)
 				  {
-					$('#container').fadeOut();
 					$('#slider').fadeOut();
+					$('#container').fadeOut();
 					active = 0;
 					console.log(active);
 				  }
 				  else
 				  {
 					$("#container").fadeOut(function(){
-						$(this).text(experiment).fadeIn();
+						$('#container').empty();
+						$(this).append(experiment).fadeIn();
 						$('#slider').fadeIn();
+						$('#percent').fadeIn();
 						active = 1;
 						console.log(active);
 					});
@@ -60,16 +62,18 @@
 			 $("#cancerbtn").click(function(){
 				  if($('#container').is(':visible') && active == 2)
 				  {
-					$('#container').fadeOut();
 					$('#slider').fadeOut();
+					$('#container').fadeOut();
 					active = 0;
 					console.log(active);
 				  }
 				  else
 				  {
 					$("#container").fadeOut(function(){
-						$(this).text(cancer).fadeIn();
+						$('#container').empty();
+						$(this).append(cancer).fadeIn();
 						$('#slider').fadeIn();
+						$('#percent').fadeIn();
 						active = 2;
 						console.log(active);
 					});
@@ -79,16 +83,18 @@
 			 $("#bitcoinbtn").click(function(){
 				  if($('#container').is(':visible') && active == 3)
 				  {
-					$('#container').fadeOut();
 					$('#slider').fadeOut();
+					$('#container').fadeOut();
 					active = 0;
 					console.log(active);
 				  }
 				  else
 				  {
 					$("#container").fadeOut(function(){
-						$(this).text(bitcoin).fadeIn();
+						$('#container').empty();
+						$(this).append(bitcoin).fadeIn();
 						$('#slider').fadeIn();
+						$('#percent').fadeIn();
 						active = 3;
 						console.log(active);
 					});
@@ -98,21 +104,28 @@
 			 $("#alienbtn").click(function(){
 				  if($('#container').is(':visible') && active == 4)
 				  {
-					$('#container').fadeOut();
 					$('#slider').fadeOut();
+					$('#container').fadeOut();
 					active = 0;
 					console.log(active);
 				  }
 				  else
 				  {
 					$("#container").fadeOut(function(){
-						$(this).text(aliens).fadeIn();
+						$('#container').empty();
+						$(this).append(aliens).fadeIn();
 						$('#slider').fadeIn();
+						$('#percent').fadeIn();
 						active = 4;
 						console.log(active);
 					});
 				  }
 			 });
+			 
+			 function updateTextInput(val) {
+				document.getElementById('textInput').value=val; 
+			}
+			
 			 
 
 });
@@ -157,28 +170,28 @@
 						<div class="row">
 							<div class="col-md-3">
 							<table>
-								<tr><a href="<!--solver.html?do=aliens-->" class="hi-icon hi-icon-rocket" id="expbtn">Experiments</a></tr>
+								<tr><a  class="hi-icon hi-icon-rocket" id="expbtn">Experiments</a></tr>
 								<tr><h2>Experiments</h2></tr>
 							</table>
 							</div>
 
 							<div class="col-md-3">
 							<table>
-								<tr><a href="<!--solver.html?do=cancer-->" class="hi-icon hi-icon-cancer" id="cancerbtn">Cure Cancer</a></tr>
+								<tr><a  class="hi-icon hi-icon-cancer" id="cancerbtn">Cure Cancer</a></tr>
 								<tr><h2>Cure Cancer</h2></tr>
 							</table>
 							</div>
 							
 							<div class="col-md-3">
 							<table>
-								<tr><a href="<!--solver.html?do=btc-->" class="hi-icon hi-icon-bitcoin" id="bitcoinbtn">Mine Bitcoin</a></tr>
+								<tr><a  class="hi-icon hi-icon-bitcoin" id="bitcoinbtn">Mine Bitcoin</a></tr>
 								<tr><h2>Mine Bitcoin</h2></tr>
 							</table>
 							</div>
 							
 							<div class="col-md-3">
 							<table>
-								<tr><a href="<!--solver.html?do=globalwarming-->" class="hi-icon hi-icon-alien" id="alienbtn">Find Aliens</a></tr>
+								<tr><a class="hi-icon hi-icon-alien" id="alienbtn">Find Aliens</a></tr>
 								<tr><h2>Find Aliens</h2></tr>
 							</table>
 							</div>                       
@@ -189,10 +202,15 @@
 						<p align='justify'></p>
 					</div>
 					
-					<div id="slider" style="display: none; padding: 15px 30%;">
-					  <input type="range" name="points" id="points" min="0" max="100">
+				
+					<div id="slider" align='center' style="display: none; padding: 15px 30%;">
+						  <form oninput="amount.value=rangeInput.value">
+							<input type="range" id="rangeInput" name="rangeInput" min="0" max="100">
+							<output name="amount" for="rangeInput">50</output>
+						  </form>
 					</div>
 
+					
 					
 					
 				</section>
