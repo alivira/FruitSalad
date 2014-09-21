@@ -91,7 +91,6 @@ Runner.prototype.execute = function(){
         
         var before = new Date(); before = before.getTime();
         var result = that.computeFunction(that.data);
-	debugger;
         that.reportResult(result);
         var after = new Date(); after = after.getTime();
         that.sleepTime = after - before;
