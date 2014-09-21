@@ -42,6 +42,7 @@
 				  {
 					$('#slider').fadeOut();
 					$('#container').fadeOut();
+					document.getElementById("connect").href=""; 
 					active = 0;
 					console.log(active);
 				  }
@@ -50,6 +51,7 @@
 					$("#container").fadeOut(function(){
 						$('#container').empty();
 						$(this).append(experiment).fadeIn();
+						document.getElementById("connect").href="solver.html?do=factor"; 
 						$('#slider').fadeIn();
 						$('#percent').fadeIn();
 						active = 1;
@@ -63,6 +65,7 @@
 				  {
 					$('#slider').fadeOut();
 					$('#container').fadeOut();
+					document.getElementById("connect").href=""; 
 					active = 0;
 					console.log(active);
 				  }
@@ -71,6 +74,7 @@
 					$("#container").fadeOut(function(){
 						$('#container').empty();
 						$(this).append(cancer).fadeIn();
+						document.getElementById("connect").href="solver.html?do=cancer";
 						$('#slider').fadeIn();
 						$('#percent').fadeIn();
 						active = 2;
@@ -84,6 +88,7 @@
 				  {
 					$('#slider').fadeOut();
 					$('#container').fadeOut();
+					document.getElementById("connect").href=""; 
 					active = 0;
 					console.log(active);
 				  }
@@ -92,6 +97,7 @@
 					$("#container").fadeOut(function(){
 						$('#container').empty();
 						$(this).append(bitcoin).fadeIn();
+						document.getElementById("connect").href="solver.html?do=bitcoin";
 						$('#slider').fadeIn();
 						$('#percent').fadeIn();
 						active = 3;
@@ -105,6 +111,7 @@
 				  {
 					$('#slider').fadeOut();
 					$('#container').fadeOut();
+					document.getElementById("connect").href=""; 
 					active = 0;
 					console.log(active);
 				  }
@@ -113,6 +120,7 @@
 					$("#container").fadeOut(function(){
 						$('#container').empty();
 						$(this).append(aliens).fadeIn();
+						document.getElementById("connect").href="solver.html?do=aliens";
 						$('#slider').fadeIn();
 						$('#percent').fadeIn();
 						active = 4;
@@ -225,7 +233,7 @@
 			<section class="color-1">
 				<p>
 	
-					<button class="btn btn-1 btn-1e">Connect</button>
+					<a id="connect"><button class="btn btn-1 btn-1e">Connect</button></a>
 
 				</p>
 			</section>
