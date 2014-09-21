@@ -12,5 +12,5 @@ computeFunction = function(data){
             factorArray.push(i);
         }
     }
-    return factoArray;
+    return factorArray;
 }
