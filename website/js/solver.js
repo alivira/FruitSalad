@@ -73,7 +73,7 @@ Runner.prototype.execute = function(){
 
     var that = this;
     var runUnit = function(){
-        this.data = that.getData();
+        that.data = that.getData();
         
         console.log(that.data);
         
