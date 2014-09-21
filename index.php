@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-$reconnect_url = "website/reconnect.html";
-$landing_page_url = "website/index.html";
-if(isset($_SESSION['timestamp'])) {
+$reconnect_url = "http://10.42.0.1/website/reconnect.html";
+$landing_page_url = "http://10.42.0.1/website/index.html";
+if(isset($_SESSION['timestamp'])) { // TODO: Only works if user navigates back to root of same site.
     header("Location: " . $reconnect_url);
     echo "You've been here before";
     
