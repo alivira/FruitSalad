@@ -48,7 +48,7 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
         ['Genre', 'Your Contribution', { role: 'style' }, 'Total',  { role: 'style' } ],
-        ['Factors', 10, 'white', 60, '#2C834F']
+        ['Factors', 10, 'white', 60, '#E6E6E6']
       ]);
 
       var options = {
@@ -57,7 +57,7 @@
         legend: {  position: "none"},
         bar: { groupWidth: '70%' },
         isStacked: true,
-		backgroundColor: '#41ab6b'
+		backgroundColor: '#41ab6b',
       };
         var chart = new google.visualization.BarChart(document.getElementById('chart_div2'));
 
@@ -132,7 +132,7 @@
 			
 		</table>
 		
-					<div id="chart_div2" style="width: 900px; height: 100px;"></div>
+		<div id="chart_div2" style="width: 900px; height: 100px;"></div>
 
 		</div>
 	</div>
