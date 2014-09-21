@@ -43,6 +43,7 @@
 				  {
 					$('#container').fadeOut();
 					$('#slider').fadeOut();
+					$('#percent').fadeOut();
 					active = 0;
 					console.log(active);
 				  }
@@ -51,6 +52,7 @@
 					$("#container").fadeOut(function(){
 						$(this).text(experiment).fadeIn();
 						$('#slider').fadeIn();
+						$('#percent').fadeIn();
 						active = 1;
 						console.log(active);
 					});
@@ -62,6 +64,7 @@
 				  {
 					$('#container').fadeOut();
 					$('#slider').fadeOut();
+					$('#percent').fadeOut();
 					active = 0;
 					console.log(active);
 				  }
@@ -70,6 +73,7 @@
 					$("#container").fadeOut(function(){
 						$(this).text(cancer).fadeIn();
 						$('#slider').fadeIn();
+						$('#percent').fadeIn();
 						active = 2;
 						console.log(active);
 					});
@@ -81,6 +85,7 @@
 				  {
 					$('#container').fadeOut();
 					$('#slider').fadeOut();
+					$('#percent').fadeOut();
 					active = 0;
 					console.log(active);
 				  }
@@ -89,6 +94,7 @@
 					$("#container").fadeOut(function(){
 						$(this).text(bitcoin).fadeIn();
 						$('#slider').fadeIn();
+						$('#percent').fadeIn();
 						active = 3;
 						console.log(active);
 					});
@@ -100,6 +106,7 @@
 				  {
 					$('#container').fadeOut();
 					$('#slider').fadeOut();
+					$('#percent').fadeOut();
 					active = 0;
 					console.log(active);
 				  }
@@ -108,11 +115,17 @@
 					$("#container").fadeOut(function(){
 						$(this).text(aliens).fadeIn();
 						$('#slider').fadeIn();
+						$('#percent').fadeIn();
 						active = 4;
 						console.log(active);
 					});
 				  }
 			 });
+			 
+			 function updateTextInput(val) {
+				document.getElementById('textInput').value=val; 
+			}
+			
 			 
 
 });
@@ -189,10 +202,14 @@
 						<p align='justify'></p>
 					</div>
 					
-					<div id="slider" style="display: none; padding: 15px 30%;">
-					  <input type="range" name="points" id="points" min="0" max="100">
+					<div id="slider" align='center' style="display: none; padding: 15px 30%;">
+						  <form oninput="amount.value=rangeInput.value">
+							<input type="range" id="rangeInput" name="rangeInput" min="0" max="100">
+							<output name="amount" for="rangeInput">50</output>
+						  </form>
 					</div>
 
+					
 					
 					
 				</section>
