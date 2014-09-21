@@ -136,8 +136,8 @@ runner = new Runner();
 var beat = function(){
     httpGet("../heartbeat.php");
     var stats = httpGet("../stats.php");
-    document.getElementById("score").innerHTML = stats["individualJobsCompleted"]*29; 
-    document.getElementById("individualJobsCompleted").innerHTML = stats["individualJobsCompleted"]*29;
+    document.getElementById("score").innerHTML = stats["individualJobsCompleted"]*29;
+    document.getElementById("individualJobsCompleted").innerHTML = stats["individualJobsCompleted"];
     document.getElementById("individualPercent").innerHTML = stats["individualJobsCompleted"]/stats["globalJobsTotal"]*100;
     document.getElementById("globalTimeElapsed").innerHTML = stats["globalTimeElapsed"];
     document.getElementById("individualRank").innerHTML = stats["individualRank"];
