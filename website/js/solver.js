@@ -75,8 +75,8 @@ Runner.prototype.getData = function(){
 	return true;
     } catch (err) {
 	//Most likely a JSON.parse error (eg. Empty string)
-	console.error("ERROR!");
-	console.error(err);
+	//console.error("ERROR!");
+	//console.error(err);
 	return false;
     }
 
@@ -90,20 +90,19 @@ Runner.prototype.reportResult = function(result){
 }
 
 
-Runner.prototype.computeFunction = function() {return "Some result";};
 Runner.prototype.execute = function(){
 
     var that = this;
     this.stop = false;
     var runUnit = function(){
         if (!that.getData()) {
-		console.error("Error'd!");
+		//console.error("Error'd!");
 		that.stop = true;;
 		return;
 	}
         
         var before = new Date(); before = before.getTime();
-        var result = that.computeFunction(that.data);
+        var result = computeFunction(that.data.jobdata);
         that.reportResult(result);
         var after = new Date(); after = after.getTime();
         that.sleepTime = (after - before) * 500;
@@ -131,12 +130,18 @@ setInterval(time, 30);
 
 // start runner
 runner = new Runner();
-runner.execute();
-
-
 
 // Start our heartbeat
 var beat = function(){
     httpGet("../heartbeat.php");
+    var stats = httpGet("../stats.php");
+    document.getElementById("score").innerHTML = stats["individualJobsCompleted"]*29;
+    document.getElementById("individualJobsCompleted").innerHTML = stats["individualJobsCompleted"];
+    document.getElementById("individualPercent").innerHTML = stats["individualJobsCompleted"]/stats["globalJobsTotal"]*100;
+    document.getElementById("globalTimeElapsed").innerHTML = stats["globalTimeElapsed"];
+    document.getElementById("individualRank").innerHTML = stats["individualRank"];
+    document.getElementById("globalJobsCompleted").innerHTML = stats["globalJobsCompleted"];
+    document.getElementById("globalPercent").innerHTML = stats["globalPercent"];
+
 }
 setInterval(beat, 5000);
