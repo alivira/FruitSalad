@@ -104,13 +104,23 @@
 		
 		</div>
 	</div>
-	
+	<script>
+		var myParam = location.search.split('do=')[1]
+		switch (myParam){
+			case "aliens":
+			document.getElementById("problemTitle").innerHTML = "Now Searching for Aliens" ;break;
+			case "bitcoin":
+			document.getElementById("problemTitle").innerHTML = "Now Now Mining Bitcoin" ;break;
+			case "cancer":
+			document.getElementById("problemTitle").innerHTML = "Now Helping Cure Cancer" ;break;
+			case "factor":
+			document.getElementById("problemTitle").innerHTML = "Now Factoring Large Numbers" ;break;
+		}
+	</script>
 	<div id="slide4">
 		<div class="main" align="middle" style="padding-bottom: 50px; margin-top: -20px;">
 			<table width="35%">	
-			<tr>
-				<td><h2 id="problemTitle">You are now computing.</h2></td>
-			</tr>
+
 			<tr>
 				<td><h2 style="color: #fff;">Time spent globally: </h2></td>
 				<td><h2 id="globalTimeElapsed" style="color: #E6E6E6;">0</h2></td>
