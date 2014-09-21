@@ -55,21 +55,22 @@
 }
 
 
-.hi-icon-cancer:before {
-	content: "c";
-}
-
-.hi-icon-alien:before {
+.hi-icon-rocket:before {
 	content: "a";
 }
 
-.hi-icon-global:before {
-	content: "d";
-}
+
 
 .hi-icon-bitcoin:before {
 	content: "b";
 }
+.hi-icon-cancer:before {
+	content: "c";
+}
+.hi-icon-alien:before {
+	content: "d";
+}
+
 
 
 
