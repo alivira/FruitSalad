@@ -1,7 +1,7 @@
 <?php
 	
 
-$db = new PDO("mysql:host=localhost;dbname=basket;charset=utf8", "root", "");
+$db = new PDO("mysql:host=localhost;dbname=basket;charset=utf8", "root", "What is systems?");
 //Get job
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
 	$stmt = $db->query("SELECT * FROM jobs WHERE (jobstatus='INCOMPLETE') OR (jobstatus='INPROGRESS' AND NOW() - `lastsent` > 3600) LIMIT 1");
