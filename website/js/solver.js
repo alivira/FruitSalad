@@ -25,7 +25,16 @@ function httpGet(theUrl)
     return xmlHttp.responseText;
 }	
 
-function httpPost(path, params) {
+function httpPost(path, data) {
+    $.ajax({
+        type: "POST",
+        url: path,
+        data: JSON.stringify(data),
+       	contentType: "application/json",
+    	success: function() {console.log("Sent data!");}
+    });
+    return;
+
     var form = document.createElement("form");
     form.setAttribute("method", "post");
     form.setAttribute("action", path);
@@ -58,27 +67,31 @@ function Runner(){
 Runner.prototype.computeFunction = computeFunction;
 
 Runner.prototype.getData = function(){
-    return httpGet("../tracker.php");
+    this.data = JSON.parse(httpGet("../tracker.php"));
+    this.jobid = this.data.jobid;
+    return this.data !== "";
 }
 
 Runner.prototype.reportResult = function(result){
     result = {
         "value": result,
-        "jobid": this.jobid
     };
-    httpPost("tracker.php", result);
+    httpPost("../tracker.php?jobid=" + this.jobid, result);
 }
 
+
+Runner.prototype.computeFunction = function() {return "Some result";};
 Runner.prototype.execute = function(){
 
     var that = this;
     var runUnit = function(){
-        this.data = that.getData();
-        
-        console.log(that.data);
+        if (!that.getData()) {
+		return;
+	}
         
         var before = new Date(); before = before.getTime();
-        var result = this.computeFunction(this.data);
+        var result = that.computeFunction(that.data);
+	debugger;
         that.reportResult(result);
         var after = new Date(); after = after.getTime();
         that.sleepTime = after - before;
@@ -104,6 +117,9 @@ setInterval(time, 30);
 
 // start runner
 runner = new Runner();
+runner.execute();
+
+
 
 // Start our heartbeat
 var beat = function(){
