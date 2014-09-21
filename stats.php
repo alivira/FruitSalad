@@ -24,10 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                                            WHERE jobstatus = 'COMPLETE'
                                            GROUP BY clientid")->fetch(PDO::FETCH_ASSOC);
         $globalTimeElapsed = $db->query("SELECT NOW() - MIN(lastsent)
-                                         FROM jobs")->fetch(PDO::FETCH_ASSOC);
+                                         FROM jobs")->fetch(PDO::FETCH_ASSOC)["NOW() - MIN(lastsent)"];
         $individualTimeElapsed = $db->query("SELECT NOW() - MIN(lastsent)
                                              FROM jobs
-                                             WHERE clientid=" . $clientid)->fetch(PDO::FETCH_ASSOC);
+                                             WHERE clientid=" . $clientid)->fetch(PDO::FETCH_ASSOC)["NOW() - MIN(lastsent)"];
 
         $rank = 1;
         foreach($clientJobCompletion as $row) {
@@ -44,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             "individualJobsCompleted" => $individualJobsCompleted,
             "individualRank" => $rank,
             "individualTimeElapsed" => $individualTimeElapsed,
+            "clientid" => $clientid,
         );
 
         echo json_encode($returnVal);
