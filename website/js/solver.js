@@ -95,7 +95,7 @@ Runner.prototype.execute = function(){
         var after = new Date(); after = after.getTime();
         that.sleepTime = after - before;
     }
-    
+
     runUnit();
     setInterval(runUnit, this.sleepTime);
 
