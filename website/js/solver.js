@@ -56,9 +56,9 @@ Runner.prototype.execute = function(){
 
     var that = this;
     var runUnit = function(){
-        this.data = this.getData();
+        this.data = that.getData();
         
-        console.log(this.data);
+        console.log(that.data);
         
         var before = new Date(); before = before.getTime();
         var result = this.computeFunction(this.data);
