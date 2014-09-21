@@ -104,7 +104,6 @@ setInterval(time, 30);
 
 // start runner
 runner = new Runner();
-runner.execute();
 
 // Start our heartbeat
 var beat = function(){
