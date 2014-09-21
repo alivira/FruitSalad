@@ -6,14 +6,17 @@ Author: Samuel Dalusung
 
 /*= GENERAL STYLING
 --------------------------------------------------------*/
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,500,700);
+@import url("../fonts/opensans_regular/stylesheet.css");
+@import url("../fonts/opensans_italic/stylesheet.css");
+@import url("../fonts/opensans_light/stylesheet.css");
+@import url("../fonts/opensans_bold/stylesheet.css");
 
 
 body{
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	font-family: 'Open Sans';
+	font-family: 'open_sanslight';
 	font-weight:normal;
   -webkit-user-select: none;
      -moz-user-select: -moz-none;
@@ -21,7 +24,7 @@ body{
           user-select: none;
 }
 h1 { 
-    font-family: 'Open Sans';
+    font-family: 'open_sanslight';
 	font-weight:normal;
 	font-size: 80pt;
 	text-align: center;
@@ -31,7 +34,7 @@ h1 {
 }
     
 h2 {
-   font-family:'Open Sans';
+   font-family:'open_sanslight';
    font-weight: 300;
    font-size: 30pt;
    color: #41ab6b;
@@ -40,7 +43,7 @@ h2 {
 }
 
 h3 {
-   font-family: 'Open Sans';
+   font-family: 'open_sanslight';
    font-weight: normal;
    font-size: 16px;
    text-align: center;
