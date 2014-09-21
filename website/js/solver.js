@@ -137,11 +137,11 @@ var beat = function(){
     var stats = JSON.parse(httpGet("../stats.php"));
     document.getElementById("score").innerHTML = stats["individualJobsCompleted"]*29;
     document.getElementById("individualJobsCompleted").innerHTML = stats["individualJobsCompleted"];
-    document.getElementById("individualPercent").innerHTML = stats["individualJobsCompleted"]/stats["globalJobsTotal"]*100;
+    document.getElementById("individualPercent").innerHTML = Math.floor(stats["individualJobsCompleted"]/stats["globalJobsTotal"]*100);
     document.getElementById("globalTimeElapsed").innerHTML = stats["globalTimeElapsed"];
     document.getElementById("individualRank").innerHTML = stats["individualRank"];
     document.getElementById("globalJobsCompleted").innerHTML = stats["globalJobsCompleted"];
-    document.getElementById("globalPercent").innerHTML = stats["globalJobsCompleted"]/stats["globalJobsTotal"];
+    document.getElementById("globalPercent").innerHTML = Math.floor(stats["globalJobsCompleted"]/stats["globalJobsTotal"]*100);
 
 }
 setInterval(beat, 5000);
