@@ -23,7 +23,7 @@ function httpPost(path, params) {
             form.appendChild(hiddenField);
          }
     }
-    document.header.appendChild(form);
+    document.body.appendChild(form);
     form.submit();
 }
 
