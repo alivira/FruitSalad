@@ -22,6 +22,9 @@ $db = new PDO("mysql:host=localhost;dbname=basket;charset=utf8", "root", "What i
                                            FROM jobs
                                            WHERE jobstatus = 'COMPLETE'
                                            GROUP BY clientid");
+        $globalClientsNum = $db->query("SELECT COUNT(*)
+                                        FROM clients
+                                        WHERE active = TRUE")->fetch(PDO::FETCH_ASSOC)["COUNT(*)"];
         $globalTimeElapsed = $db->query("SELECT NOW() - MIN(lastsent)
                                          FROM jobs")->fetch(PDO::FETCH_ASSOC)["NOW() - MIN(lastsent)"];
         $individualTimeElapsed = $db->query("SELECT NOW() - MIN(lastsent)
@@ -40,6 +43,7 @@ $db = new PDO("mysql:host=localhost;dbname=basket;charset=utf8", "root", "What i
             "globalJobsCompleted" => $globalJobsCompleted,
             "globalCompletionPercentage" => $globalJobsCompleted/$globalJobsTotal,
             "globalTimeElapsed" => $globalTimeElapsed,
+            "globalClientsNum" => $globalClientsNum,
             "individualJobsCompleted" => $individualJobsCompleted,
             "individualRank" => $rank,
             "individualTimeElapsed" => $individualTimeElapsed,

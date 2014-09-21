@@ -143,5 +143,7 @@ var beat = function(){
     document.getElementById("globalJobsCompleted").innerHTML = stats["globalJobsCompleted"];
     document.getElementById("globalPercent").innerHTML = Math.floor(stats["globalJobsCompleted"]/stats["globalJobsTotal"]*100);
 
+    document.getElementById("globalClientsNum").innerHTML = stats["globalClientsNum"];
+
 }
 setInterval(beat, 5000);

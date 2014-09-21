@@ -16,52 +16,6 @@
 	
 	
 	
-	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-        ['Genre', 'Your Contribution', { role: 'style' }, 'Total',  { role: 'style' } ],
-        ['Factors', 10, '#41ab6b', 60, 'silver']
-      ]);
-
-      var options = {
-        width: 600,
-        height: 200,
-        legend: {  position: "none"},
-        bar: { groupWidth: '70%' },
-        isStacked: true
-      };
-        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-
-        chart.draw(data, options);
-      }
-    </script>
-	
-	<script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-        ['Genre', 'Your Contribution', { role: 'style' }, 'Total',  { role: 'style' } ],
-        ['Factors', 10, 'white', 60, '#E6E6E6']
-      ]);
-
-      var options = {
-        width: 600,
-        height: 200,
-        legend: {  position: "none"},
-        bar: { groupWidth: '70%' },
-        isStacked: true,
-		backgroundColor: '#41ab6b',
-      };
-        var chart = new google.visualization.BarChart(document.getElementById('chart_div2'));
-
-        chart.draw(data, options);
-      }
-    </script>
-	
 	
 	
   </head>
@@ -99,9 +53,6 @@
 		</table>
 		
 			
-		<div id="chart_div" style="width: 900px; height: 100px;"></div>
-		
-		</div>
 	</div>
 	<script>
 		var myParam = location.search.split('do=')[1]
@@ -128,6 +79,10 @@
 				<td><h2 style="color: #fff;">Your rank: </h2></td>
 				<td><h2 id="individualRank" style="color: #E6E6E6;">0</h2></td>
 			</tr>
+<tr>
+				<td><h2 style="color: #fff;">Total number of users: </h2></td>
+				<td><h2 id="globalClientsNum" style="color: #E6E6E6;">0</h2></td>
+			</tr>
 			<tr>
 				<td><h2 style="color: #fff;">Jobs completed globally: </h2></td>
 				<td><h2 id="globalJobsCompleted" style="color: #E6E6E6;">0</h2></td>
@@ -139,9 +94,6 @@
 			
 		</table>
 		
-		<div id="chart_div2" style="width: 900px; height: 100px;"></div>
-
-		</div>
 	</div>
 	<script src="js/solver.js"></script>
   </body>
