@@ -90,7 +90,6 @@ Runner.prototype.reportResult = function(result){
 }
 
 
-Runner.prototype.computeFunction = function() {return "Some result";};
 Runner.prototype.execute = function(){
 
     var that = this;
@@ -103,7 +102,7 @@ Runner.prototype.execute = function(){
 	}
         
         var before = new Date(); before = before.getTime();
-        var result = that.computeFunction(that.data);
+        var result = computeFunction(that.data.jobdata);
         that.reportResult(result);
         var after = new Date(); after = after.getTime();
         that.sleepTime = (after - before) * 500;
