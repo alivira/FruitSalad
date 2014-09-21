@@ -18,5 +18,14 @@
         $db->exec("UPDATE clients
                    SET active=0
                    WHERE clientid=" . $row["clientid"]);
+
+        $query = "UPDATE jobs INNER JOIN clients
+                      ON  clients.clientid = jobs.clientid     
+                  SET jobs.jobstatus = 'INCOMPLETE', jobs.clientid=0
+                  WHERE clients.clientip = :ip AND
+                      jobs.jobstatus != 'COMPLETE'";
+        $preStmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+        $preStmt->execute(array(":ip" => $ip));
+
     }
 ?>
