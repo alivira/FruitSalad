@@ -4,7 +4,6 @@
 $db = new PDO("mysql:host=localhost;dbname=basket;charset=utf8", "root", "What is systems?");
 
 //Get job
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $ip = $_SERVER['REMOTE_ADDR'];
         $clientid = $db->query("SELECT clientid
                                 FROM clients
@@ -22,20 +21,20 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $clientJobCompletion = $db->query("SELECT clientid, COUNT( * )
                                            FROM jobs
                                            WHERE jobstatus = 'COMPLETE'
-                                           GROUP BY clientid")->fetch(PDO::FETCH_ASSOC);
+                                           GROUP BY clientid");
         $globalTimeElapsed = $db->query("SELECT NOW() - MIN(lastsent)
                                          FROM jobs")->fetch(PDO::FETCH_ASSOC)["NOW() - MIN(lastsent)"];
         $individualTimeElapsed = $db->query("SELECT NOW() - MIN(lastsent)
                                              FROM jobs
                                              WHERE clientid=" . $clientid)->fetch(PDO::FETCH_ASSOC)["NOW() - MIN(lastsent)"];
 
+
         $rank = 1;
-        foreach($clientJobCompletion as $row) {
+        while($row = $clientJobCompletion->fetch(PDO::FETCH_ASSOC)) {
             if($row['COUNT(*)'] >  $individualJobsCompleted) { $rank++; }
         }
 
         header("Content-type: application/json");
-
         $returnVal = array(
             "globalJobsTotal" => $globalJobsTotal,
             "globalJobsCompleted" => $globalJobsCompleted,
@@ -48,7 +47,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         );
 
         echo json_encode($returnVal);
-    }
 ?>
 
 
