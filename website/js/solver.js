@@ -78,12 +78,12 @@ Runner.prototype.execute = function(){
         console.log(that.data);
         
         var before = new Date(); before = before.getTime();
-        var result = this.computeFunction(this.data);
+        var result = that.computeFunction(that.data);
         that.reportResult(result);
         var after = new Date(); after = after.getTime();
         that.sleepTime = after - before;
     }
-    
+
     runUnit();
     setInterval(runUnit, this.sleepTime);
 
