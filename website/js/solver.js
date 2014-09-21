@@ -134,14 +134,14 @@ runner = new Runner();
 // Start our heartbeat
 var beat = function(){
     httpGet("../heartbeat.php");
-    var stats = httpGet("../stats.php");
+    var stats = JSON.parse(httpGet("../stats.php"));
     document.getElementById("score").innerHTML = stats["individualJobsCompleted"]*29;
     document.getElementById("individualJobsCompleted").innerHTML = stats["individualJobsCompleted"];
     document.getElementById("individualPercent").innerHTML = stats["individualJobsCompleted"]/stats["globalJobsTotal"]*100;
     document.getElementById("globalTimeElapsed").innerHTML = stats["globalTimeElapsed"];
     document.getElementById("individualRank").innerHTML = stats["individualRank"];
     document.getElementById("globalJobsCompleted").innerHTML = stats["globalJobsCompleted"];
-    document.getElementById("globalPercent").innerHTML = stats["globalPercent"];
+    document.getElementById("globalPercent").innerHTML = stats["globalJobsCompleted"]/stats["globalJobsTotal"];
 
 }
 setInterval(beat, 5000);
