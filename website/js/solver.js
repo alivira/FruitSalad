@@ -38,7 +38,7 @@ function Runner(){
 }
 
 //Runner class that handles computations
-//Runner.prototype.computeFunction = computeFunction;
+Runner.prototype.computeFunction = computeFunction;
 
 Runner.prototype.getData = function(){
     return httpGet("../tracker.php");
