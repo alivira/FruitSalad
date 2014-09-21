@@ -1,3 +1,20 @@
+computeFunction = function(data){
+    var factorArray = [];
+    var jobId = data.jobid;
+    var jobdata = data.jobdata;
+    var jobdataArray = data.split(",");
+    var number = jobdataArray[0]
+    var min = jobdataArray[1]
+    var max = jobdataArray[2]
+
+    for (var i=min;i<=max;i++){
+        if (number % i == 0){
+            factorArray.push(i);
+        }
+    }
+    return factorArray;
+}
+
 function httpGet(theUrl)
 {
     var xmlHttp = null;
@@ -38,7 +55,7 @@ function Runner(){
 }
 
 //Runner class that handles computations
-//Runner.prototype.computeFunction = computeFunction;
+Runner.prototype.computeFunction = computeFunction;
 
 Runner.prototype.getData = function(){
     return httpGet("../tracker.php");
@@ -62,7 +79,7 @@ Runner.prototype.execute = function(){
         
         var before = new Date(); before = before.getTime();
         var result = this.computeFunction(this.data);
-        this.reportResult(result);
+        that.reportResult(result);
         var after = new Date(); after = after.getTime();
         that.sleepTime = after - before;
     }

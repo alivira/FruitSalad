@@ -35,20 +35,22 @@
 				var aliens ="Search for Extra-Terrestrial Intelligence, or SETI@home, is an internet-nnased public volunteering computing project employing the BIONC software platform. Hosted by the Space Sciences Laboratory, at the University of California, Berkely, its purpose is to analyze radio signals, search for signs of extra terrestrial intelligence.";
 				var cancer ="IBM's World Community Grid will enable the most computationally  extensive componenets of tissue microarray software to run at optimal speed. By harnessing the collective computational power of the World Community Grid, researchers can analyze a larger set of cancer tissue specimens";
 				var bitcoin ="Bitcoin is a software-based online payment system. Payments are recorded in a public ledger using its own unit of account called bitcoin. Payments work peer-to-peer without a central repository or administrator. Bitcoins are created as a reward for processing work.";
-				var global ="World Community Grid and the Clean Energy Project are assembling a virtual laboratory to build thousands of organic compounds in order to discover the best candidates for future solar cell research.";
+				var experiment = "A demo program that will attempt to factor large numbers.";
 				var active = 1;
 			
-			  $("#alienbtn").click(function(){
+			  $("#expbtn").click(function(){
 				  if($('#container').is(':visible') && active == 1)
 				  {
 					$('#container').fadeOut();
+					$('#slider').fadeOut();
 					active = 0;
 					console.log(active);
 				  }
 				  else
 				  {
 					$("#container").fadeOut(function(){
-						$(this).text(aliens).fadeIn();
+						$(this).text(experiment).fadeIn();
+						$('#slider').fadeIn();
 						active = 1;
 						console.log(active);
 					});
@@ -59,6 +61,7 @@
 				  if($('#container').is(':visible') && active == 2)
 				  {
 					$('#container').fadeOut();
+					$('#slider').fadeOut();
 					active = 0;
 					console.log(active);
 				  }
@@ -66,6 +69,7 @@
 				  {
 					$("#container").fadeOut(function(){
 						$(this).text(cancer).fadeIn();
+						$('#slider').fadeIn();
 						active = 2;
 						console.log(active);
 					});
@@ -76,6 +80,7 @@
 				  if($('#container').is(':visible') && active == 3)
 				  {
 					$('#container').fadeOut();
+					$('#slider').fadeOut();
 					active = 0;
 					console.log(active);
 				  }
@@ -83,23 +88,26 @@
 				  {
 					$("#container").fadeOut(function(){
 						$(this).text(bitcoin).fadeIn();
+						$('#slider').fadeIn();
 						active = 3;
 						console.log(active);
 					});
 				  }
 			 });
 			 
-			 $("#globalbtn").click(function(){
+			 $("#alienbtn").click(function(){
 				  if($('#container').is(':visible') && active == 4)
 				  {
 					$('#container').fadeOut();
+					$('#slider').fadeOut();
 					active = 0;
 					console.log(active);
 				  }
 				  else
 				  {
 					$("#container").fadeOut(function(){
-						$(this).text(global).fadeIn();
+						$(this).text(aliens).fadeIn();
+						$('#slider').fadeIn();
 						active = 4;
 						console.log(active);
 					});
@@ -131,7 +139,8 @@
 				<h2>How do I get started?</h2>
 				<p>Simple! Just select your charity of choice below and click <em>connect</em>. Make sure not to close this tab since it will be used to help solve the algorithms. Happy browsing!</p>
 			
-
+ <form>
+</form>
 
 			</div>
 		</div>
@@ -148,8 +157,8 @@
 						<div class="row">
 							<div class="col-md-3">
 							<table>
-								<tr><a href="<!--solver.html?do=aliens-->" class="hi-icon hi-icon-alien" id="alienbtn">Find Aliens</a></tr>
-								<tr><h2>Find Aliens</h2></tr>
+								<tr><a href="<!--solver.html?do=aliens-->" class="hi-icon hi-icon-rocket" id="expbtn">Experiments</a></tr>
+								<tr><h2>Experiments</h2></tr>
 							</table>
 							</div>
 
@@ -169,18 +178,20 @@
 							
 							<div class="col-md-3">
 							<table>
-								<tr><a href="<!--solver.html?do=globalwarming-->" class="hi-icon hi-icon-global" id="globalbtn">Save Rainforests</a></tr>
-								<tr><h2>Save Rainforests</h2></tr>
+								<tr><a href="<!--solver.html?do=globalwarming-->" class="hi-icon hi-icon-alien" id="alienbtn">Find Aliens</a></tr>
+								<tr><h2>Find Aliens</h2></tr>
 							</table>
 							</div>                       
 						</div>
 					</div>
+					
 					<div id="container" style="display:none; padding:0 15%;">
 						<p align='justify'></p>
-						
-
 					</div>
 					
+					<div id="slider" style="display: none; padding: 15px 30%;">
+					  <input type="range" name="points" id="points" min="0" max="100">
+					</div>
 
 					
 					
