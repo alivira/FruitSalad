@@ -67,9 +67,19 @@ function Runner(){
 Runner.prototype.computeFunction = computeFunction;
 
 Runner.prototype.getData = function(){
-    this.data = JSON.parse(httpGet("../tracker.php"));
-    this.jobid = this.data.jobid;
-    return this.data !== "";
+    try {
+        var rawData = httpGet("../tracker.php");
+	console.log(rawData);
+        this.data = JSON.parse(rawData);
+        this.jobid = this.data.jobid;
+	return true;
+    } catch (err) {
+	//Most likely a JSON.parse error (eg. Empty string)
+	console.error("ERROR!");
+	console.error(err);
+	return false;
+    }
+
 }
 
 Runner.prototype.reportResult = function(result){
@@ -84,8 +94,11 @@ Runner.prototype.computeFunction = function() {return "Some result";};
 Runner.prototype.execute = function(){
 
     var that = this;
+    this.stop = false;
     var runUnit = function(){
         if (!that.getData()) {
+		console.error("Error'd!");
+		that.stop = true;;
 		return;
 	}
         
@@ -93,11 +106,13 @@ Runner.prototype.execute = function(){
         var result = that.computeFunction(that.data);
         that.reportResult(result);
         var after = new Date(); after = after.getTime();
-        that.sleepTime = after - before;
+        that.sleepTime = (after - before) * 500;
     }
 
     runUnit();
-    setInterval(runUnit, this.sleepTime);
+    if (!this.stop) {
+	    setInterval(runUnit, this.sleepTime);
+    }
 
 }
 
