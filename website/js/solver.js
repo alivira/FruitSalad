@@ -62,7 +62,7 @@ Runner.prototype.execute = function(){
         
         var before = new Date(); before = before.getTime();
         var result = this.computeFunction(this.data);
-        this.reportResult(result);
+        that.reportResult(result);
         var after = new Date(); after = after.getTime();
         that.sleepTime = after - before;
     }
