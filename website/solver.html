@@ -19,6 +19,56 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Share" />
 	
+	
+	
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['Genre', 'Your Contribution', { role: 'style' }, 'Total',  { role: 'style' } ],
+        ['Factors', 10, '#41ab6b', 60, 'silver']
+      ]);
+
+      var options = {
+        width: 600,
+        height: 200,
+        legend: {  position: "none"},
+        bar: { groupWidth: '70%' },
+        isStacked: true
+      };
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+	
+	<script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['Genre', 'Your Contribution', { role: 'style' }, 'Total',  { role: 'style' } ],
+        ['Factors', 10, 'white', 60, '#2C834F']
+      ]);
+
+      var options = {
+        width: 600,
+        height: 200,
+        legend: {  position: "none"},
+        bar: { groupWidth: '70%' },
+        isStacked: true,
+		backgroundColor: '#41ab6b'
+      };
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div2'));
+
+        chart.draw(data, options);
+      }
+    </script>
+	
+	
+	
   </head>
   <body>
   
@@ -30,8 +80,8 @@
 	</div> 
 		
 	<div id="slide2">
-		<div class="main" align="left" style="padding-left:30%; padding-right:10%;">
-		<table>	
+		<div class="main" align="middle" style="padding-bottom: 90px;">
+		<table width="35%">	
 			<tr>
 				<td><h2 id="problemTitle">You are now computing.</h2></td>
 			</tr>
@@ -43,8 +93,49 @@
 				<td><h2>Score: </h2></td>
 				<td><h2 it="score" style="color: #939393;">0</h2></td>
 			</tr>
+			<tr>
+				<td><h2>Jobs completed: </h2></td>
+				<td><h2 it="score" style="color: #939393;">0</h2></td>
+			</tr>
+			<tr>
+				<td><h2>% of total: </h2></td>
+				<td><h2 it="score" style="color: #939393;">0</h2></td>
+			</tr>
 		</table>
+		
 			
+		<div id="chart_div" style="width: 900px; height: 100px;"></div>
+		
+		</div>
+	</div>
+	
+	<div id="slide4">
+		<div class="main" align="middle" style="padding-bottom: 50px; margin-top: -20px;">
+			<table width="35%">	
+			<tr>
+				<td><h2 id="problemTitle">You are now computing.</h2></td>
+			</tr>
+			<tr>
+				<td><h2 style="color: #fff;">Time spent globally: </h2></td>
+				<td><h2 id="time" style="color: #E6E6E6;">0</h2></td>
+			</tr>
+			<tr>
+				<td><h2 style="color: #fff;">Your rank: </h2></td>
+				<td><h2 it="score" style="color: #E6E6E6;">0</h2></td>
+			</tr>
+			<tr>
+				<td><h2 style="color: #fff;">Jobs completed globally: </h2></td>
+				<td><h2 it="score" style="color: #E6E6E6;">0</h2></td>
+			</tr>
+			<tr>
+				<td><h2 style="color: #fff;">% of total global completion: </h2></td>
+				<td><h2 it="score" style="color: #E6E6E6;">0</h2></td>
+			</tr>
+			
+		</table>
+		
+					<div id="chart_div2" style="width: 900px; height: 100px;"></div>
+
 		</div>
 	</div>
   </body>
